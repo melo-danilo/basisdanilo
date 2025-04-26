@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/personListFragment">
+
+    <fragment
+        android:id="@+id/personListFragment"
+        android:name="com.draccoapp.basisnordestetest.ui.fragments.PersonListFragment"
+        tools:layout="@layout/fragment_person_list">
+        <action
+            android:id="@+id/action_personListFragment_to_personFormFragment"
+            app:destination="@id/personFormFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/personFormFragment"
+        android:name="com.draccoapp.basisnordestetest.ui.fragments.PersonFormFragment"
+        android:label="Person Form"
+        tools:layout="@layout/fragment_person_form">
+        <argument
+            android:name="personId"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+</navigation>

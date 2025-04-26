@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "192649909283",
+    "project_id": "basis-test-a1340",
+    "storage_bucket": "basis-test-a1340.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192649909283:android:42fee3a9ee0984c9ff0d96",
+        "android_client_info": {
+          "package_name": "com.draccoapp.basisnordestetest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCijG5FVzrhrsEjBTWsoVBMcsPuLA2aHiA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

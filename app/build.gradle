@@ -1,0 +1,79 @@
+plugins {
+    alias(libs.plugins.android.application)
+    id 'realm-android'  // Realm para Java
+    id 'dagger.hilt.android.plugin'  // Hilt
+    id 'androidx.navigation.safeargs'  // Safe Args para navegação
+    alias(libs.plugins.googleServices)
+}
+
+android {
+    namespace 'com.draccoapp.basisnordestetest'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.draccoapp.basisnordestetest"
+        minSdk 26
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    // AndroidX e Material Design
+    implementation(libs.appcompat)
+    implementation(libs.material)
+    implementation libs.activity
+    implementation libs.constraintlayout
+
+    // Testes
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.ext.junit)
+    androidTestImplementation(libs.espresso.core)
+
+    // Navegação
+    implementation(libs.navigation.ui)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.dynamic.features.fragment)
+
+    // Hilt para injeção de dependência
+    implementation "com.google.dagger:hilt-android:2.44.2"
+    annotationProcessor "com.google.dagger:hilt-android-compiler:2.44.2"  // Use annotationProcessor para Java
+
+    // Realm
+    implementation 'io.realm:realm-android-library:10.19.0'
+    implementation 'io.realm:realm-annotations:10.19.0'
+
+    // Retrofit e Gson para busca de CEP
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:32.7.0')
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-analytics'
+
+    // Google Play Services
+    implementation(libs.play.services.location)
+    implementation(libs.playServicesMaps)
+}
